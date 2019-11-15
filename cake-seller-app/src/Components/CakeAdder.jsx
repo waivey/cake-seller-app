@@ -1,6 +1,6 @@
 import React from "react";
 
-const CakeAdder = ({ addCake, cakeCounter }) => {
+const CakeAdder = ({ addCake, cakeCounter, cakesSold }) => {
   const handleClick = () => {
     if (cakeCounter >= 50) {
       addCake(4);
@@ -15,17 +15,18 @@ const CakeAdder = ({ addCake, cakeCounter }) => {
   return (
     <div>
       <h2>Cupcake Count: {cakeCounter}</h2>
+      <p>Inventory: {cakeCounter - cakesSold}</p>
       <button onClick={handleClick}>Make Cake!</button>
-      <div>
-        {cakeCounter >= 10 && (
+      {/* <div>
+        {cakeCounter >= 25 && (
           <h4>Piping Bag aquired! Productivity increases</h4>
         )}
+      </div> */}
+      <div>
+        {cakeCounter >= 100 && <h4>Mixer aquired! Productivity increases</h4>}
       </div>
       <div>
-        {cakeCounter >= 20 && <h4>Mixer aquired! Productivity increases</h4>}
-      </div>
-      <div>
-        {cakeCounter >= 50 && (
+        {cakeCounter >= 150 && (
           <h4>Industrial Oven aquired! Productivity increases</h4>
         )}
       </div>
