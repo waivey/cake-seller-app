@@ -3,9 +3,9 @@ import React from "react";
 const PriceAdjuster = ({ adjustPrice, price }) => {
   const handleClick = event => {
     if (event.target.name === "lower") {
-      adjustPrice(-0.5);
+      adjustPrice(-0.1);
     } else {
-      adjustPrice(0.5);
+      adjustPrice(0.1);
     }
   };
   return (

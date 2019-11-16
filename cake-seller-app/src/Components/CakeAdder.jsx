@@ -14,22 +14,9 @@ const CakeAdder = ({ addCake, cakeCounter, cakesSold }) => {
   };
   return (
     <div>
-      <h2>Cupcake Count: {cakeCounter}</h2>
+      <h1>Cupcake Count: {cakeCounter}</h1>
       <p>Inventory: {cakeCounter - cakesSold}</p>
       <button onClick={handleClick}>Make Cake!</button>
-      {/* <div>
-        {cakeCounter >= 25 && (
-          <h4>Piping Bag aquired! Productivity increases</h4>
-        )}
-      </div> */}
-      <div>
-        {cakeCounter >= 100 && <h4>Mixer aquired! Productivity increases</h4>}
-      </div>
-      <div>
-        {cakeCounter >= 150 && (
-          <h4>Industrial Oven aquired! Productivity increases</h4>
-        )}
-      </div>
     </div>
   );
 };

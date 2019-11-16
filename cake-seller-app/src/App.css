@@ -1,3 +1,16 @@
+body {
+  background-color: hotpink;
+  font-family: "Lobster", cursive;
+}
+
+h1 {
+  color: darkblue;
+  -webkit-text-fill-color: aqua;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: darkblue;
+  /* font-size: 30px; */
+}
+
 .App {
   text-align: center;
 }

@@ -3,15 +3,15 @@ import React from "react";
 import "./App.css";
 import CakeAdder from "./Components/CakeAdder";
 import PriceAdjuster from "./Components/PriceAdjuster";
-import ItemsGenerator from "./Components/ItemsGenerator";
 import PerkAdder from "./Components/PerkAdder";
 
 class App extends React.Component {
   state = {
-    cakeCounter: 1,
+    cakeCounter: 0,
     price: 2,
     revenue: 0,
-    cakesSold: 0
+    cakesSold: 0,
+    cost: 2
   };
 
   addCake = newCakes => {
@@ -28,10 +28,29 @@ class App extends React.Component {
     });
   };
 
-  sellCakes = () => {
-    this.setState({
-      cakesSold: this.state.cakesSold + 1
+  adjustCost = newCost => {
+    this.setState(currentState => {
+      return { cost: currentState.cost + newCost };
     });
+  };
+
+  purchasePerk = perk => {
+    this.setState(currentState => {
+      return {
+        revenue: currentState.revenue - perk
+      };
+    });
+  };
+
+  sellCakes = () => {
+    if (
+      this.state.cakeCounter > 1 &&
+      this.state.cakeCounter > this.state.cakesSold
+    ) {
+      this.setState({
+        cakesSold: this.state.cakesSold + 1
+      });
+    }
   };
 
   componentDidMount() {
@@ -47,7 +66,8 @@ class App extends React.Component {
 
   adjustRevenue = () => {
     this.setState(currentState => {
-      let newRevenue = (currentState.price / 2) * currentState.cakesSold;
+      let newRevenue =
+        (currentState.price / currentState.cost) * currentState.cakesSold;
       return { revenue: Math.round((newRevenue * 100) / 100) };
     });
   };
@@ -66,14 +86,13 @@ class App extends React.Component {
           price={this.state.price}
         />
         <h5>Cupcakes sold: {this.state.cakesSold}</h5>
-        <h4>Revenue: £{this.state.revenue}</h4>
-        <ItemsGenerator
-          generateItem={this.generateItem}
-          items={this.state.items}
+        <h3>Revenue: £{this.state.revenue}</h3>
+
+        <PerkAdder
           revenue={this.state.revenue}
+          adjustCost={this.adjustCost}
+          purchasePerk={this.purchasePerk}
         />
-        <PerkAdder revenue={this.state.revenue} />
-        {/* {this.state.revenue > 10 && <h4>PipingBag: £5</h4>} */}
       </div>
     );
   }
