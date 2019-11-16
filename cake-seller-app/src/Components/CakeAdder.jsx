@@ -15,7 +15,12 @@ const CakeAdder = ({ addCake, cakeCounter, cakesSold }) => {
   return (
     <div>
       <h1>Cupcake Count: {cakeCounter}</h1>
-      <p>Inventory: {cakeCounter - cakesSold}</p>
+      {cakeCounter - cakesSold <= 5 && cakesSold > 5 ? (
+        <p className="panic">Inventory: {cakeCounter - cakesSold}</p>
+      ) : (
+        <p>Inventory: {cakeCounter - cakesSold}</p>
+      )}
+
       <button onClick={handleClick}>Make Cake!</button>
     </div>
   );

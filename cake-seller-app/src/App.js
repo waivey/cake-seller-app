@@ -86,13 +86,30 @@ class App extends React.Component {
           price={this.state.price}
         />
         <h5>Cupcakes sold: {this.state.cakesSold}</h5>
-        <h3>Revenue: £{this.state.revenue}</h3>
+        {this.state.cakesSold > 5 && this.state.revenue <= 5 ? (
+          <h2 className="panic">Revenue: £{this.state.revenue}</h2>
+        ) : (
+          <h2>Revenue: £{this.state.revenue}</h2>
+        )}
 
         <PerkAdder
           revenue={this.state.revenue}
           adjustCost={this.adjustCost}
           purchasePerk={this.purchasePerk}
         />
+        <div>
+          {this.state.cakeCounter - this.state.cakesSold === 0 &&
+            this.state.revenue > 0 &&
+            window.alert("You ran out of cupcakes!")}
+        </div>
+        <div>
+          {this.state.cakesSold > 2 &&
+            this.state.revenue === 0 &&
+            window.alert("You ran out of money!")}
+          {this.state.cakesSold > 2 &&
+            this.state.revenue === 0 &&
+            clearInterval(this.interval)}
+        </div>
       </div>
     );
   }
