@@ -4,6 +4,7 @@ import "./App.css";
 import CakeAdder from "./Components/CakeAdder";
 import PriceAdjuster from "./Components/PriceAdjuster";
 import PerkAdder from "./Components/PerkAdder";
+import basic from "./assets/basic.png";
 
 class App extends React.Component {
   state = {
@@ -97,6 +98,7 @@ class App extends React.Component {
           adjustCost={this.adjustCost}
           purchasePerk={this.purchasePerk}
         />
+        <img src={basic} alt="plain cupcake" />
         <div>
           {this.state.cakeCounter - this.state.cakesSold === 0 &&
             this.state.revenue > 0 &&

@@ -1,4 +1,11 @@
 import React from "react";
+import sprinkles from "../assets/sprinkles.png";
+import foodColouring from "../assets/foodColouring.png";
+import cases from "../assets/cases.png";
+import cherries from "../assets/cherries.png";
+import rainbows from "../assets/rainbows.png";
+import stars from "../assets/stars.png";
+import unicorns from "../assets/unicorns.png";
 
 class PerkAdder extends React.Component {
   state = {
@@ -60,6 +67,9 @@ class PerkAdder extends React.Component {
             <button onClick={this.handleClick} name="sprinkles">
               Buy
             </button>
+            {this.state.perks.sprinkles.click > 0 && (
+              <img src={sprinkles} alt="sprinkles"></img>
+            )}
           </div>
         )}
         {(this.props.revenue > 16 ||
@@ -70,6 +80,9 @@ class PerkAdder extends React.Component {
             <button onClick={this.handleClick} name="foodColouring">
               Buy
             </button>
+            {this.state.perks.foodColouring.click > 0 && (
+              <img src={foodColouring} alt="foodColouring"></img>
+            )}
           </div>
         )}
         {(this.props.revenue > 28 || this.state.perks.cases.click > 0) && (
@@ -79,6 +92,9 @@ class PerkAdder extends React.Component {
             <button onClick={this.handleClick} name="cases">
               Buy
             </button>
+            {this.state.perks.cases.click > 0 && (
+              <img src={cases} alt="cases"></img>
+            )}
           </div>
         )}
         {(this.props.revenue > 40 || this.state.perks.cherries.click > 0) && (
@@ -88,6 +104,9 @@ class PerkAdder extends React.Component {
             <button onClick={this.handleClick} name="cherries">
               Buy
             </button>
+            {this.state.perks.cherries.click > 0 && (
+              <img src={cherries} alt="cherries"></img>
+            )}
           </div>
         )}
         {(this.props.revenue > 52 || this.state.perks.stars.click > 0) && (
@@ -97,6 +116,9 @@ class PerkAdder extends React.Component {
             <button onClick={this.handleClick} name="stars">
               Buy
             </button>
+            {this.state.perks.stars.click > 0 && (
+              <img src={stars} alt="stars"></img>
+            )}
           </div>
         )}
         {(this.props.revenue > 64 || this.state.perks.rainbows.click > 0) && (
@@ -106,6 +128,9 @@ class PerkAdder extends React.Component {
             <button onClick={this.handleClick} name="rainbows">
               Buy
             </button>
+            {this.state.perks.rainbows.click > 0 && (
+              <img src={rainbows} alt="rainbows"></img>
+            )}
           </div>
         )}
         {(this.props.revenue > 76 || this.state.perks.unicorns.click > 0) && (
@@ -115,6 +140,9 @@ class PerkAdder extends React.Component {
             <button onClick={this.handleClick} name="unicorns">
               Buy
             </button>
+            {this.state.perks.unicorns.click > 0 && (
+              <img src={unicorns} alt="unicorns"></img>
+            )}
           </div>
         )}
       </>
