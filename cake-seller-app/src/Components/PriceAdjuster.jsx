@@ -9,7 +9,7 @@ const PriceAdjuster = ({ adjustPrice, price }) => {
     }
   };
   return (
-    <div>
+    <div className="priceAdjuster">
       <h5>Price per cupcake: £{price}</h5>
       <button onClick={handleClick} name="lower">
         lower

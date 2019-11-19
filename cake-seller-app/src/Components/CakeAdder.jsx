@@ -13,8 +13,8 @@ const CakeAdder = ({ addCake, cakeCounter, cakesSold }) => {
     }
   };
   return (
-    <div>
-      <h1>Cupcake Count: {cakeCounter}</h1>
+    <div className="cakeAdder">
+      <h2>Cupcake Count: {cakeCounter}</h2>
       {cakeCounter - cakesSold <= 5 && cakesSold > 5 ? (
         <p className="panic">Inventory: {cakeCounter - cakesSold}</p>
       ) : (

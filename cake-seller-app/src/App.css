@@ -1,39 +1,146 @@
 body {
+  margin: 25px;
   background-color: hotpink;
   font-family: "Lobster", cursive;
 }
 
-h1 {
+h2 {
   color: darkblue;
   -webkit-text-fill-color: aqua;
   -webkit-text-stroke-width: 1px;
   -webkit-text-stroke-color: darkblue;
-  /* font-size: 30px; */
+  font-size: 35px;
 }
 
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-gap: 10px;
+  grid-template-rows: repeat(4, 1fr) 50px;
+  grid-template-columns: 20px repeat(7, 1fr) 20px;
+  justify-items: center;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #09d3ac;
+.cakeAdder {
+  grid-row: 1;
+  grid-column: 3;
+}
+
+.priceAdjuster {
+  grid-row: 1;
+  grid-column: 4;
+  align-self: end;
+}
+
+.revenue {
+  grid-row: 1;
+  grid-column: 7;
 }
 
 .panic {
-  color: white;
+  color: aqua;
+  -webkit-text-fill-color: white;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: aqua;
+}
+
+.sprinkles {
+  grid-row: 3 / 4;
+  grid-column: 5 / 6;
+  align-self: start;
+}
+
+.foodColouring {
+  grid-row: 3 / 4;
+  grid-column: 6 / 7;
+  align-self: start;
+}
+
+.cases {
+  grid-row: 3 / 4;
+  grid-column: 4 / 5;
+  align-self: start;
+}
+
+.cherries {
+  grid-row: 3 / 4;
+  grid-column: 7 / 8;
+  align-self: start;
+}
+
+.stars {
+  grid-row: 3 /4;
+  grid-column: 3 / 4;
+  align-self: start;
+}
+
+.rainbows {
+  grid-row: 2;
+  grid-column: 7 / 8;
+}
+
+.unicorns {
+  grid-row: 2;
+  grid-column: 3 / 4;
+}
+
+.container {
+  grid-row: 1;
+  grid-column: 4;
+}
+
+.basicCupcake {
+  position: absolute;
+  align-items: start;
+  z-index: -1;
+  max-width: 400px;
+}
+
+.sprinklesImg {
+  position: absolute;
+  align-items: start;
+  z-index: 3;
+  max-width: 400px;
+}
+
+.foodColouringImg {
+  position: absolute;
+  align-items: start;
+  z-index: 1;
+  max-width: 400px;
+}
+
+.casesImg {
+  position: absolute;
+  align-items: start;
+  z-index: 2;
+  max-width: 400px;
+}
+
+.cherriesImg {
+  position: absolute;
+  align-items: start;
+  z-index: 4;
+  max-width: 400px;
+}
+
+.starsImg {
+  position: absolute;
+  align-items: start;
+  z-index: 5;
+  max-width: 400px;
+}
+
+.rainbowsImg {
+  position: absolute;
+  align-items: start;
+  z-index: 6;
+  max-width: 400px;
+}
+
+.unicornsImg {
+  position: absolute;
+  align-items: start;
+  z-index: 7;
+  max-width: 400px;
 }

@@ -4,7 +4,6 @@ import "./App.css";
 import CakeAdder from "./Components/CakeAdder";
 import PriceAdjuster from "./Components/PriceAdjuster";
 import PerkAdder from "./Components/PerkAdder";
-import basic from "./assets/basic.png";
 
 class App extends React.Component {
   state = {
@@ -86,19 +85,21 @@ class App extends React.Component {
           adjustPrice={this.adjustPrice}
           price={this.state.price}
         />
-        <h5>Cupcakes sold: {this.state.cakesSold}</h5>
-        {this.state.cakesSold > 5 && this.state.revenue <= 5 ? (
-          <h2 className="panic">Revenue: £{this.state.revenue}</h2>
-        ) : (
-          <h2>Revenue: £{this.state.revenue}</h2>
-        )}
+        <div className="revenue">
+          {this.state.cakesSold > 5 && this.state.revenue <= 5 ? (
+            <h2 className="panic">Revenue: £{this.state.revenue}</h2>
+          ) : (
+            <h2>Revenue: £{this.state.revenue}</h2>
+          )}
+          <p>Cupcakes sold: {this.state.cakesSold}</p>
+        </div>
 
         <PerkAdder
           revenue={this.state.revenue}
           adjustCost={this.adjustCost}
           purchasePerk={this.purchasePerk}
         />
-        <img src={basic} alt="plain cupcake" />
+
         <div>
           {this.state.cakeCounter - this.state.cakesSold === 0 &&
             this.state.revenue > 0 &&
